@@ -20,7 +20,7 @@ httpx_output = os.path.join(results_dir, "httpx_output.txt")
 
 # Run subdomain tools
 tools = [
-    ("subfinder", f"subfinder -d {target_domain} -all -r -config /root/.config/subfinder/provider-config.yaml > {subfinder_output}"),
+    ("subfinder", f"subfinder -d {target_domain} -all -r -config /root/.config/subfinder/provider-config.yaml | {subfinder_output}"),
     ("assetfinder", f"assetfinder --subs-only {target_domain} > {assetfinder_output}"),
     ("github-subdomains", f"github-subdomains -t /home/vansh/tools/github-tokens.txt -d {target_domain} -o {github_subdomain_output}")
 ]
